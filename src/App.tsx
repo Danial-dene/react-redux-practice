@@ -1,19 +1,17 @@
 import React from 'react';
-import { Provider } from 'react-redux';
 import './App.css';
 import FirstReduxTest from './pages/input';
-
-import createStore from './createReduxStore';
-
-const store = createStore()
+import { PostList } from './posts/renderPosts';
 
 function App() {
+  
   return (
     <div className="App">
       <header className="App-header">
-      <Provider store={store}> 
+      <React.Fragment>
         <FirstReduxTest/>
-        </Provider>
+        <PostList/>
+        </React.Fragment>
       </header>
     </div>
   );

@@ -14,6 +14,8 @@ const initialState = [
             }
         }
     })
-
+    
     export const { postFirst } = postSlice.actions
     export default postSlice.reducer
+
+    //console.log(postSlice.reducer)

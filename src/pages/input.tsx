@@ -1,6 +1,6 @@
     import React, { useState } from "react";
     import { useDispatch } from 'react-redux';
-import { postFirst } from "../posts/postSlice";
+    import { postFirst } from "../posts/postSlice";
 
     const FirstReduxTest = () => {
 
