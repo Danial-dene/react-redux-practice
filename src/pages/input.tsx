@@ -1,11 +1,12 @@
+    import { nanoid } from "@reduxjs/toolkit";
     import React, { useState } from "react";
     import { useDispatch } from 'react-redux';
-    import { postFirst } from "../posts/postSlice";
+    import { postFirst } from "../store/reducers.tsx/postSlice";
 
     const FirstReduxTest = () => {
 
         const [name, setName] = useState('');
-        const [title, setTitle] = useState('');
+        const [content, setTitle] = useState('');
         const [id, setId] = useState ('');
 
         const  dispatch = useDispatch();
@@ -22,11 +23,11 @@
             setTitle(e.target.value)
         }
 
-        const onClickSend = () =>{
+        const onClickSend = () => {
             dispatch(postFirst({
-                id,
+                id: nanoid(),
                 name,
-                title
+                content
             }))
 
             setName('')
@@ -38,12 +39,6 @@
             <section>
         <form>
             <label>ID</label>
-            <input
-            type="text"
-            id="postId"
-            name="postId"
-            onChange={onIDChange}
-            />
 
             <label>Name</label>
             <input
@@ -60,7 +55,7 @@
             name="postContent"
             onChange={onContentChange}
             />
-
+            
             <button
             id="sendBtn"
             name="sendBtn"
